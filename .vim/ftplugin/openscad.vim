@@ -3,5 +3,5 @@
 :python fl = vim.eval("expand('%:p')")
 :let window=system('xdotool getwindowfocus')
 :python scad = subprocess.Popen("exec openscad "+fl, shell=True)
-:call system("xdotool windowfocus ".window)
+:call system("sleep .3; xdotool windowfocus ".window)
 :autocmd VimLeave * :python scad.kill()
